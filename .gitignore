@@ -8,7 +8,7 @@ src
 80-hasp.rules
 CHANGELOG_CN.md
 CHANGELOG_EN.md
-CMakeList.txt
+CMakeLists.txt
 LICENSE
 README.md
 version.h.in
