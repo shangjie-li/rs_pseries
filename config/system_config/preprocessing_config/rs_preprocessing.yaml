@@ -1,0 +1,31 @@
+###############################################################
+#####################   DO NOT EDIT !!!!  #####################
+###############################################################
+# Common
+common:
+  calib_file: 
+    include: ../../usr_config/calibration.yaml             # (string) The name of the calibration file
+  motion_compensation_mode: 2  #0: No motion compensation, 1: use imu and odom, 2: use localization pose
+
+# IMU Configuration
+imu:
+  imu_timeout: 10           # (float) Sensor considered lost when no msg received, unit: s
+                            #       A warning is given when 50% is reached
+
+# ODOM Configuration
+odom:
+  speed_unit: 1             # (bool) input speed unit 0:m/s 1:km/h 2:mph, output is m/s
+  odom_timeout: 10         # (float) Sensor considered lost when no msg received, unit: s
+                            #       A warning is given when 50% is reached
+
+# GNSS Configuration
+gnss:
+  speed_unit: 0               # (bool) input speed unit 0:m/s 1:km/h 2:mph, output is m/s
+  gnss_timeout: 10         # (float) Sensor considered lost when no msg received, unit: s
+                            #       A warning is given when 50% is reached
+
+# Lidar Configuration
+lidar:
+  fusion_frame_id: /fusion_points
+  lidar_timeout: 10        # (float) Sensor considered lost when no msg received, unit: s
+                            #       A warning is given when 50% is reached

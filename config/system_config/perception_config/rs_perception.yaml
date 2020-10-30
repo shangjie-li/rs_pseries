@@ -1,0 +1,53 @@
+# MUST means this node must set, DEFAULT means this node can be ignore and will be set with defult value
+core_uniform: # MUST
+  strategy: "pseries" # MUST perception_sdk only support pseries,v2r
+  check_config_with_strategy: true # DEFAULT if check the config is satisfy the strategy
+  with_debug_info: true # DEFAULT enable debug info output or not
+rviz_config: # DEFAULT
+  prefix: "" # DEFAULT
+  strategy: "efficient" #DEFAULT "efficient","debug"
+  map:
+    - file: "" #DEFAULT address file for map
+    - file: "" #DEFAULT address file for map
+  road_flag:
+    - file: "" #DEFAULT
+  map_frame_id: "map" #DEFAULT
+communication_uniform: # MUST
+  device_id: 1 #DEFAULT
+  socket_remote_ip: 127.0.0.1  #DEFAULT
+  socket_remote_port: 60080 #DEFAULT
+save_result_config: #DEFAULT
+  enable: false #DEFAULT
+  filter_pts: true #default
+  save_pcd: true #DEFAULT
+  save_dir: "" #DEFAULT
+config: # MUST
+  core_config: /core_config/core_config.yaml # DEFAULT
+  roi_config:
+    enable: false
+    file_path: /roi_config/roi.yaml # DEFAULT
+    filter_pts: true  #
+    discard_box: false
+    refer_point: "center" #center or corner
+  communication_config: /communication_config/communication_config.yaml # MUST
+  model: /model # MUST
+  pseries_config: # DEFAULT
+    bbox_mode: "reg_box"  #"tight","reg_ang","reg_box"
+    detect_range:
+      xmin: -200.0
+      xmax: 200.0
+      ymin: -80.0
+      ymax: 80.0
+  v2r_config: # DEFAULT
+    global_pose:
+      x: 0
+      y: 0
+      z: 0
+      roll: 0
+      pitch: 0
+      yaw: 0
+  gps_config: #DEFAULT
+    gps_type: centroid  #center/centroid/nearest
+    gps_longtitude: 113.961121
+    gps_latitude: 22.584291
+    gps_altitude: 0

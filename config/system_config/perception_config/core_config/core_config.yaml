@@ -1,0 +1,48 @@
+multi_lidar_config: # MUST true perception algorithm args
+  /middle_lidar: /multi_lidar/middle_lidar_config.yaml
+  /left_lidar: /multi_lidar/left_lidar_config.yaml
+  /right_lidar: /multi_lidar/right_lidar_config.yaml
+prefusion_config:
+  enable: false
+  object_fusion:
+    enable: true
+    iou_thre: 0.1
+basic_detection_config:
+  enable: true
+  strategy: "bev"    #"bev","fv"
+  bev_config:
+    min_height: 0.0
+    max_height: 1.8
+    noise_min_pts: 3
+    noise_max_pts: 8
+    noise_inner_dist: 0.25
+    noise_outer_dist: 1.5
+    freespace_config:
+      enable: true
+      free_width_thre: 2.5
+      sample_dist_thre: 0.3
+    atteention_config:
+      enable: true
+      refine_attention: true
+      bird_view_config:
+        range:
+          xmin: -50.
+          xmax: 50.
+          ymin: -50.
+          ymax: 50.
+        unit_size: 0.2
+      seg_dilate: false
+      seg_scan_x: 0.5
+      seg_scan_y: 0.5
+      seg_min_pts: 3
+tracking_config:
+  enable: true
+  strategy: "geo"    #"geo","sky"
+  geo_tracking_config:
+    predict_time: 0.5
+    history_num: 10
+    eva_seq_size: 10
+    basic_velocity_noise: 0.4
+    match_distance_max: 3.0
+    enable_type_fusion: true
+

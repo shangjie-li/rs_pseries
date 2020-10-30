@@ -1,0 +1,64 @@
+lidar:  
+  - parent_frame_id: /base_link  
+    frame_id: /middle_lidar
+    device_type: RS128
+    x: 0
+    y: 0
+    z: 2.0
+    roll: 0
+    pitch: 0
+    yaw: 0
+
+  # - parent_frame_id: /middle_lidar
+  #   frame_id: /left_lidar 
+  #   device_type: RS16
+  #   x: 0.2000000000000001
+  #   y: -0.7500000000000002
+  #   z: -0.3
+  #   roll: 0.7347836352999982
+  #   pitch: 0.0034906586
+  #   yaw: -0.0139626344
+
+  # - parent_frame_id: /middle_lidar
+  #   frame_id: /right_lidar
+  #   device_type: RS16
+  #   x: -0.897
+  #   y: -0.72
+  #   z: -0.024
+  #   roll: 0.00104719758
+  #   pitch: 0.005585053760000001
+  #   yaw: -1.80903381945
+ 
+base: 
+  frame_id: /base_link 
+ 
+imu: 
+  parent_frame_id: /base_link 
+  frame_id: /imu 
+  x: 0 
+  y: 0 
+  z: 0 
+  roll: 0
+  pitch: 0 
+  yaw: 0 
+ 
+gnss: 
+  parent_frame_id: /base_link 
+  frame_id: /gnss 
+  x: 0 
+  y: 0 
+  z: 0 
+  roll: 0 
+  pitch: 0 
+  yaw: 0 
+ 
+odom: 
+  parent_frame_id: /base_link 
+  frame_id: /odom 
+  x: 0 
+  y: 0 
+  z: 0 
+  roll: 0 
+  pitch: 0 
+  yaw: 0 
+ 

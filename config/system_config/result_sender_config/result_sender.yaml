@@ -1,0 +1,31 @@
+#@brief: ROS transmission configuration
+ros:
+  show_car_body: false
+  localization:                                            
+    send_pos_ros: false                            #@type: bool @detail: if true, the localization algorithm result will be sent through ROS
+    send_pos_ros_topic: /rs_pose          #@type: string @detail: the ROS publisher topic
+    send_map_ros: false
+    send_map_ros_topic: /rs_map   
+    send_path_ros: false   
+    send_path_ros_topic: /rs_path
+  pointcloud:                                               
+    send_processed_cloud_ros: false                      #@type: bool @detail: if true, the processed point cloud will be sent through ROS
+    processed_cloud_ros_topic: /rs_fusion_cloud            #@type: string @detail: the ROS publisher topic
+
+proto:
+  localization:
+    send_pos_proto: false                          #@type: bool @detail: if true, the localization algorithm result will be sent through Protobuf(UDP)
+    send_pos_proto_port: 60001                    #@type: uint_16 @detail: port number
+    send_pos_proto_ip: 127.0.0.1               #@type: string @detail: IP address
+  pointcloud:                                               
+    send_processed_cloud_proto: false           
+    processed_cloud_proto_port: 60030          
+    cloud_proto_ip: 127.0.0.1           
+
+                      
+
+
+
+
+
+
